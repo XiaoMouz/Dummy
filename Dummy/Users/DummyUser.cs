@@ -23,7 +23,7 @@ namespace Dummy.Users
 
         public DummyUserActionThread Actions { get; }
         public DummyUserSimulationThread Simulation { get; }
-        public DummyPlayer Player { get; }
+        new public DummyPlayer Player { get; }
         public HashSet<CSteamID> Owners { get; }
 
         public CSteamID SteamID => Player.SteamId;
@@ -61,7 +61,7 @@ namespace Dummy.Users
             return PrintMessageAsync(message, color, true, null);
         }
 
-        private Task PrintMessageAsync(string message, Color color, bool isRich, string? iconUrl)
+        new private Task PrintMessageAsync(string message, Color color, bool isRich, string? iconUrl)
         {
             async UniTask PrintMessageTask()
             {
